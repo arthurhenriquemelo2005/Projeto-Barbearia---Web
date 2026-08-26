@@ -20,7 +20,11 @@ loginForm.addEventListener("submit", async function (event) {
     try {
 
         const resposta = await auth(dados);
-        console.log("Login realizado:", resposta);
+
+        localStorage.setItem("token", resposta.token);
+
+        alert(resposta);
+
         window.location.href = "./pages/agendar.html";
 
     } catch (erro) {
