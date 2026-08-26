@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/cadastro.css">
+
+    <title>Cadastro - Barbearia</title>
+</head>
+
+<body>
+
+    <form id="Cadastro" class="cadastro-form">
+
+        <h1>Barbearia</h1>
+        <p>Crie sua conta</p>
+
+        <div class="cadastro-container">
+            <label for="nome">Nome</label>
+
+            <input type="text" id="nome" placeholder="Insira seu nome" required>
+        </div>
+
+        <div class="cadastro-container">
+            <label for="email">E-mail</label>
+
+            <input type="email" id="email" placeholder="Insira seu e-mail" required>
+        </div>
+
+        <div class="cadastro-container">
+            <label for="senha">Senha</label>
+
+            <div class="senha-container">
+                <input type="password" id="senha" placeholder="Insira sua senha" required>
+
+                <button type="button" id="mostrarSenha" class="btn-olho">
+                    👁
+                </button>
+            </div>
+        </div>
+
+        <div id="mensagemErro" class="mensagem-erro"></div>
+
+        <button type="submit">Criar conta</button>
+
+        <div class="voltar-login">
+            <span>Já possui uma conta?</span>
+
+            <button type="button" id="btnLogin" class="btn-login">
+                Entrar
+            </button>
+        </div>
+
+    </form>
+
+    <script type="module" src="../scripts/cadastrar.js"></script>
+    <script src="../scripts/efeitoSenha.js"></script>
+
+</body>
+
+</html>
