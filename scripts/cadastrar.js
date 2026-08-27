@@ -26,7 +26,7 @@ cadastroForm.addEventListener("submit", async function (event) {
         alert(resposta.mensagem);
 
         setInterval(() => {
-            window.location.href = "./agendar.html";
+            window.location.href = "../index.html";
         }, 1000);
 
     } catch (erro) {
