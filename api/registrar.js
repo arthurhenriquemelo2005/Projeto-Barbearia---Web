@@ -1,7 +1,7 @@
 import { API_URL } from "../config.js";
 
 export async function cadastrar(dados) {
-    const resposta = await fetch(`${API_URL}/users/register`, {
+    const resposta = await fetch(`${API_URL}/auth/register`, {
         method: "POST",
 
         headers: {
