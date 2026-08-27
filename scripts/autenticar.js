@@ -23,12 +23,10 @@ loginForm.addEventListener("submit", async function (event) {
 
         localStorage.setItem("token", resposta.token);
 
-        alert(resposta);
-
-        window.location.href = "./pages/agendar.html";
+        window.location.href = "./pages/agendamentos.html";
 
     } catch (erro) {
-        mensagemErro.textContent = erro.messagem;
+        mensagemErro.textContent = erro.messagem || "Não foi possivel realizar o login";
         mensagemErro.style.display = "block";
 
         senha.value = "";

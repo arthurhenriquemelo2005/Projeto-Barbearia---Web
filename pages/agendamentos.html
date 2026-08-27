@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/agendamentos.css">
+    <title>Agendamentos - BarberHub</title>
+</head>
+
+<body>
+    <main class="agendamentos">
+        <header class="agendamentos-header">
+            <h1>BarberHub</h1>
+            <p>Olá, <span id="nomeCliente">Cliente</span></p>
+            <span>Seus agendamentos</span>
+        </header>
+
+        <button id="btnAgendar" class="btn-agendar">+ Novo agendamento</button>
+
+        <section id="areaAgendamentos">
+            <div id="listaAgendamentos" class="lista-agendamentos">
+                <div class="loading">
+                    <div class="spinner"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="areaNovoAgendamento" class="area-novo-agendamento">
+            <div class="novo-agendamento">
+                <header class="novo-agendamento-header">
+                    <h2>Novo agendamento</h2>
+                    <p>Escolha o serviço, a data e o horário.</p>
+                </header>
+
+                <form id="formAgendamento">
+                    <div class="agendamento-container">
+                        <label for="servico">Serviço</label>
+                        <select id="servico" required>
+                            <option value="" disabled selected>Selecione um serviço</option>
+                        </select>
+                    </div>
+
+                    <div class="agendamento-container">
+                        <label for="data">Data</label>
+                        <input type="date" id="data" required>
+                    </div>
+
+                    <div class="agendamento-container">
+                        <label for="hora">Horário</label>
+                        <input type="time" id="hora" required>
+                    </div>
+
+                    <div id="mensagemAgendamento" class="mensagem-agendamento"></div>
+
+                    <div class="acoes-agendamento">
+                        <button type="button" id="btnVoltar" class="btn-voltar">Voltar</button>
+                        <button type="submit" class="btn-confirmar">Confirmar agendamento</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <div id="modalCancelamento" class="modal-overlay">
+        <div class="modal-cancelamento">
+            <button id="btnFecharModal" class="btn-fechar">&times;</button>
+
+            <div id="confirmacaoCancelamento">
+                <h2>Cancelar agendamento?</h2>
+                <p>Tem certeza que deseja cancelar este agendamento?</p>
+
+                <div class="acoes-modal">
+                    <button id="btnNaoCancelar" class="btn-nao-cancelar">Não</button>
+                    <button id="btnConfirmarCancelamento" class="btn-confirmar-cancelamento">
+                        Sim, cancelar
+                    </button>
+                </div>
+            </div>
+
+            <div id="statusCancelamento" class="status-cancelamento">
+                <div id="spinnerCancelamento" class="spinner-cancelamento"></div>
+                <div id="iconeCancelamento" class="icone-cancelamento"></div>
+                <div id="mensagemCancelamento">Cancelando o agendamento...</div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modalAgendamento" class="modal-overlay">
+        <div class="modal-cancelamento">
+            <button id="btnFecharModalAgendamento" class="btn-fechar">&times;</button>
+
+            <div class="status-cancelamento">
+                <div id="spinnerAgendamento" class="spinner-cancelamento"></div>
+                <div id="iconeAgendamento" class="icone-agendamento"></div>
+                <div id="mensagemModalAgendamento">
+                    Realizando o agendamento...
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="../scripts/agendamentos.js"></script>
+</body>
+
+</html>

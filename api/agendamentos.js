@@ -45,31 +45,10 @@ export async function agendar(service_id, data, hora) {
     return respostaData;
 }
 
-export async function concluir(agendamento_id) {
-    const resposta = await fetch(
-        `${API_URL_CLIENTE}/${agendamento_id}/concluirAgendamento`,
-        {
-            method: "PATCH",
-            headers: {
-                "Authorization": `Bearer ${localStorage.getItem("token")}`
-            }
-        }
-    );
-
-    const data = await resposta.json();
-
-    if (!resposta.ok) {
-        throw new Error(
-            data.mensagem || "Erro ao concluir agendamento"
-        );
-    }
-
-    return data;
-}
 
 export async function cancelar(agendamento_id) {
     const resposta = await fetch(
-        `${API_URL_CLIENTE}/${agendamento_id}/cancelarAgendamento`,
+        `${API_URL_CLIENTE}/${agendamento_id}/cancelar`,
         {
             method: "PATCH",
             headers: {

@@ -2,7 +2,7 @@ import { API_URL } from "../config.js";
 
 export async function auth(dados) {
 
-    const resposta = await fetch(`${API_URL}/users/login`, {
+    const resposta = await fetch(`${API_URL}/auth/login`, {
         method: "POST",
 
         headers: {
