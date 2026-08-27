@@ -22,6 +22,7 @@ loginForm.addEventListener("submit", async function (event) {
         const resposta = await auth(dados);
 
         localStorage.setItem("token", resposta.token);
+        localStorage.setItem("nome", resposta.nome);
 
         window.location.href = "./pages/agendamentos.html";
 

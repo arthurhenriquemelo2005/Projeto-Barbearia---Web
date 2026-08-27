@@ -1,6 +1,8 @@
 import { agendamentos, agendar, cancelar } from "../api/agendamentos.js";
 import { servicos } from "../api/servicos.js";
 
+const nomeCliente = document.getElementById("nomeCliente");
+
 const listaAgendamentos = document.getElementById("listaAgendamentos");
 const btnAgendar = document.getElementById("btnAgendar");
 const btnVoltar = document.getElementById("btnVoltar");
@@ -32,6 +34,8 @@ let agendamentoSelecionado = null;
 let listaServicos = [];
 
 document.addEventListener("DOMContentLoaded", carregarDados);
+
+nomeCliente.textContent = localStorage.getItem("nome") || "Cliente";
 
 async function carregarDados() {
     await carregarAgendamentos();
