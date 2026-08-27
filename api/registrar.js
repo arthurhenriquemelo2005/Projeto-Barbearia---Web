@@ -1,8 +1,7 @@
 import { API_URL } from "../config.js";
 
 export async function cadastrar(dados) {
-
-    const resposta = await fetch(`${API_URL}/usuarios`, {
+    const resposta = await fetch(`${API_URL}/users/register`, {
         method: "POST",
 
         headers: {
@@ -14,14 +13,12 @@ export async function cadastrar(dados) {
             email: dados.email,
             senha: dados.senha
         })
-    });
+    })
 
     const data = await resposta.json();
 
     if (!resposta.ok) {
-        throw new Error(
-            data.mensagem || "Erro no cadastro"
-        );
+        throw new Error(data.mensagem || "Erro no cadastro");
     }
 
     return data;
